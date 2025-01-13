@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spark Jar | In-Engine | Design</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="./node_modules/@rive-app/canvas/rive.js"></script>
     </head>
 
     <body>
@@ -45,11 +46,9 @@
             </div>
         </div>
 
-        <script src="node_modules/@rive-app/canvas/rive.js"></script>
-
         <script>
             const r = new rive.Rive({
-                src: 'public/jar_spark.riv',
+                src: './public/jar_spark.riv',
                 canvas: document.getElementById("canvas"),
                 autoplay: true,
                 stateMachines: ["State Machine 1", ""],
