@@ -1,0 +1,78 @@
+body{
+        background: rgb(198, 96, 0);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+#width-margin{
+    min-height: 100vh;
+    height: 100%;
+    width: 95vw;
+    justify-self: center;
+    background-color: rgb(224, 48, 9);
+    align-content: center;
+}
+
+#height-margin{
+    height: 100%;
+    margin-top: 100px;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    background-color: rgb(40, 82, 187);
+}
+
+#nav-bar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 700px;
+    background-color: rgb(56, 224, 9);
+    justify-content: space-between;
+}
+
+#canvas{
+    position: fixed;
+    width: 100vw; 
+    height: 100vw;
+    max-height: 100vh;
+    max-width: 100vh;
+    aspect-ratio: 1/1;
+    top:0%; bottom: 0%; left: 0%; right: 0%;
+    margin: auto;
+    animation-name: logo-to-top;
+    animation-duration: 1.35s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+@keyframes logo-to-top {
+    0% {
+        width: 100vw; 
+        height: 100vw;
+        max-height: 100vh;
+        max-width: 100vh;
+        top:0%; bottom: 0%; left: 0%; right: 0%;
+    }
+
+    50%{
+        width: 100vw; 
+        height: 100vh;
+        max-height: 100vh;
+        max-width: 100vh;
+        top:0%; bottom: 0%; left: 0%; right: 0%;
+    }
+
+    100% {
+        width: 200px; 
+        height: 200px;
+        max-height: 200px;
+        max-width: 200px;
+        top:0%; bottom: 90vh; left: 90vw; right: 0%;
+    }
+}
