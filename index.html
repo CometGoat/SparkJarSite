@@ -45,17 +45,17 @@
             </div>
         </div>
 
-        <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+        <script src="node_modules/@rive-app/canvas/rive.js"></script>
 
         <script>
             const r = new rive.Rive({
-                src: '/rive/jar_spark.riv',
+                src: 'public/jar_spark.riv',
                 canvas: document.getElementById("canvas"),
                 autoplay: true,
-                stateMachines: "State Machine 1",
+                stateMachines: ["State Machine 1", ""],
                 onLoad: () => {
-                r.resizeDrawingSurfaceToCanvas();
-                },
+                    r.resizeDrawingSurfaceToCanvas();
+                }
             });
         </script>
 
