@@ -14,6 +14,7 @@
         <div id="console-container" class="full-screen-rive">
             <canvas id="console-rive" width="1024" height="1536"></canvas>
             <div class="project-button" onclick="clickProject()"></div>
+            <div class="services-button" onclick="clickServices()"></div>
         </div>
 
         <!--<div id="nav-bar">
@@ -49,11 +50,25 @@
                 }
             });
 
-            var isGame = false;
+            var isGame = true;
             function clickProject(){
                 isGame = !isGame;
                 if(isGame) i.play("GAME -> TRAILER");
                 else i.play("TRAILER -> GAME");
+            }
+
+            var servicesIndex = 6;
+            function clickServices(){
+                servicesIndex++;
+                if (servicesIndex > 6) servicesIndex = 0;
+
+                if(servicesIndex == 0) i.play("IN-ENGINE -> CAMERA");
+                else if(servicesIndex == 1) i.play("CAMERA -> RENDERING");
+                else if(servicesIndex == 2) i.play("RENDERING -> ANIMATION");
+                else if(servicesIndex == 3) i.play("ANIMATION -> TECH-ART");
+                else if(servicesIndex == 4) i.play("TECH-ART -> PROGRAMMING");
+                else if(servicesIndex == 5) i.play("PROGRAMMING -> AUDIO");
+                else if(servicesIndex == 6) i.play("AUDIO -> IN-ENGINE");
             }
         </script>
 
