@@ -84,10 +84,11 @@ body{
     width: 17%;
     height: 17%;
     border-radius: 50%;
-    top: 64.2%;
-    left: 25.4%;
+    top: 60.7%;
+    left: 26.4%;
     aspect-ratio: 1/1;
     z-index: 2;
+    /*background-color: blue;*/
 }
 
 .services-button{
@@ -95,11 +96,11 @@ body{
     width: 17%;
     height: 17%;
     border-radius: 50%;
-    top: 64.2%;
-    left: 56.7%;
+    top: 60.7%;
+    left: 56%;
     aspect-ratio: 1/1;
     z-index: 2;
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 .centred-text{
