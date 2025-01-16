@@ -14,35 +14,21 @@
         <canvas id="canvas" width="1024" height="1024"></canvas>
 
         <div id="nav-bar">
-            <h1>beans</h1>
-            <h1>toast</h1>
-            <h1>egg</h1>
+            <h1>Home</h1>
+            <h1>Services</h1>
+            <h1>Work</h1>
         </div> 
 
         <div id="width-margin">
             <div id="height-margin">
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
-                <h1>Spark Jar</h1>
+                <!--<div id="landing-container">
+                    <h1 class=centred-text>Are you making a</h1>
+                </div>-->   
+                
+                <div id="bolt-container">
+                    <img class="bounce-bolt" src="./public/PlaceholderBolt.png"></img>
+                    <img class="bounce-bolt-2" src="./public/PlaceholderBolt.png"></img>
+                </div>
             </div>
         </div>
 
@@ -56,6 +42,11 @@
                     r.resizeDrawingSurfaceToCanvas();
                 }
             });
+
+            var time = Math.random();
+            time = 0.001;
+            var bounceBolt = document.getElementsByClassName("bounce-bolt");
+            bounceBolt.style.setProperty('--bolt-1-bounce-h-duration', time + 's');
         </script>
 
     </body>

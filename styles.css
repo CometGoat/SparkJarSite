@@ -1,3 +1,8 @@
+:root {
+    --bolt-1-bounce-h-duration: 2s;
+    --bolt-1-bounce-v-duration: 1.37s;
+}
+
 body{
         background: rgb(198, 96, 0);
         margin: 0;
@@ -6,12 +11,11 @@ body{
 }
 
 #width-margin{
-    min-height: 100vh;
-    height: 100%;
+    height: 70vh;
     width: 95vw;
     justify-self: center;
     background-color: rgb(224, 48, 9);
-    align-content: center;
+    align-content: start;
 }
 
 #height-margin{
@@ -51,6 +55,42 @@ body{
     z-index: 1;
 }
 
+#landing-container{
+    width: 60%;
+    justify-self: center;
+    background-color: salmon;
+}
+
+#bolt-container{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: relative;
+}
+
+.centred-text{
+    text-align: center;
+}
+
+.bounce-bolt{
+    animation-name: bounce-horizontal, bounce-vertical;
+    animation-duration: var(--bolt-1-bounce-h-duration), var(--bolt-1-bounce-v-duration);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    position: absolute;
+}
+
+.bounce-bolt-2{
+    animation-name: bounce-horizontal, bounce-vertical;
+    animation-duration: 16s, 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    position: absolute;
+}
+
 @keyframes logo-to-top {
     0% {
         width: 100vw; 
@@ -74,5 +114,23 @@ body{
         max-height: 200px;
         max-width: 200px;
         top:0%; bottom: 90vh; left: 90vw; right: 0%;
+    }
+}
+
+@keyframes bounce-horizontal{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 80%;
+    }
+}
+
+@keyframes bounce-vertical{
+    0%{
+        top: 0%;
+    }
+    100%{
+        top: 47.5%;
     }
 }
