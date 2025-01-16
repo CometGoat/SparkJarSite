@@ -11,26 +11,25 @@ body{
 }
 
 #width-margin{
-    height: 70vh;
+    height: 95dvh;
     width: 95vw;
     justify-self: center;
-    background-color: rgb(224, 48, 9);
+    /*background-color: rgb(224, 48, 9);*/
     align-content: start;
 }
 
 #height-margin{
     height: 100%;
-    margin-top: 100px;
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;
-    background-color: rgb(40, 82, 187);
+    /*background-color: rgb(40, 82, 187);*/
 }
 
 #nav-bar{
     position: fixed;
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 10vh;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
@@ -40,7 +39,23 @@ body{
     justify-content: space-between;
 }
 
-#canvas{
+#logo-rive{
+    display: none;
+    position: absolute;
+
+    width: 100vw; 
+    height: 100vw;
+    max-height: 100vh;
+    max-width: 100vh;
+    aspect-ratio: 1/1;
+
+    animation-name: logo-to-top;
+    animation-duration: 1.35s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+.full-screen-rive{
     position: fixed;
     width: 100vw; 
     height: 100vw;
@@ -49,88 +64,38 @@ body{
     aspect-ratio: 1/1;
     top:0%; bottom: 0%; left: 0%; right: 0%;
     margin: auto;
-    animation-name: logo-to-top;
-    animation-duration: 1.35s;
-    animation-fill-mode: forwards;
+}
+
+#console-container{
+    display:flex;
+}
+
+#console-rive
+{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin: auto;
     z-index: 1;
 }
 
-#landing-container{
-    width: 60%;
-    justify-self: center;
-    background-color: salmon;
-}
-
-#bolt-container{
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: yellow;
-    position: relative;
+.project-button{
+    position:absolute;
+    width: 17%;
+    height: 17%;
+    border-radius: 50%;
+    top: 64.2%;
+    left: 25.4%;
+    aspect-ratio: 1/1;
+    z-index: 2;
 }
 
 .centred-text{
     text-align: center;
 }
 
-.bounce-bolt{
-    animation-name: bounce-horizontal, bounce-vertical;
-    animation-duration: var(--bolt-1-bounce-h-duration), var(--bolt-1-bounce-v-duration);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    position: absolute;
-}
-
-.bounce-bolt-2{
-    animation-name: bounce-horizontal, bounce-vertical;
-    animation-duration: 16s, 15s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    position: absolute;
-}
-
 @keyframes logo-to-top {
-    0% {
-        width: 100vw; 
-        height: 100vw;
-        max-height: 100vh;
-        max-width: 100vh;
-        top:0%; bottom: 0%; left: 0%; right: 0%;
-    }
-
-    50%{
-        width: 100vw; 
-        height: 100vh;
-        max-height: 100vh;
-        max-width: 100vh;
-        top:0%; bottom: 0%; left: 0%; right: 0%;
-    }
-
-    100% {
-        width: 200px; 
-        height: 200px;
-        max-height: 200px;
-        max-width: 200px;
-        top:0%; bottom: 90vh; left: 90vw; right: 0%;
-    }
-}
-
-@keyframes bounce-horizontal{
     0%{
-        left: 0%;
-    }
-    100%{
-        left: 80%;
-    }
-}
-
-@keyframes bounce-vertical{
-    0%{
-        top: 0%;
-    }
-    100%{
-        top: 47.5%;
+        
     }
 }

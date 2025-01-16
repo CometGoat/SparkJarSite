@@ -11,31 +11,27 @@
 
     <body>
 
-        <canvas id="canvas" width="1024" height="1024"></canvas>
+        <div id="console-container" class="full-screen-rive">
+            <canvas id="console-rive" width="1024" height="1536"></canvas>
+            <div class="project-button" onclick="clickProject()"></div>
+        </div>
 
-        <div id="nav-bar">
+        <!--<div id="nav-bar">
             <h1>Home</h1>
             <h1>Services</h1>
             <h1>Work</h1>
-        </div> 
+        </div> -->
 
         <div id="width-margin">
             <div id="height-margin">
-                <!--<div id="landing-container">
-                    <h1 class=centred-text>Are you making a</h1>
-                </div>-->   
-                
-                <div id="bolt-container">
-                    <img class="bounce-bolt" src="./public/PlaceholderBolt.png"></img>
-                    <img class="bounce-bolt-2" src="./public/PlaceholderBolt.png"></img>
-                </div>
+                <canvas id="logo-rive" width="1024" height="1024"></canvas>
             </div>
         </div>
 
         <script>
             const r = new rive.Rive({
                 src: './public/jar_spark.riv',
-                canvas: document.getElementById("canvas"),
+                canvas: document.getElementById("logo-rive"),
                 autoplay: true,
                 stateMachines: ["State Machine 1", ""],
                 onLoad: () => {
@@ -43,10 +39,22 @@
                 }
             });
 
-            var time = Math.random();
-            time = 0.001;
-            var bounceBolt = document.getElementsByClassName("bounce-bolt");
-            bounceBolt.style.setProperty('--bolt-1-bounce-h-duration', time + 's');
+            const i = new rive.Rive({
+                src: './public/gameboy.riv',
+                canvas: document.getElementById("console-rive"),
+                autoplay: true,
+                stateMachines: ["State Machine 1", ""],
+                onLoad: () => {
+                    i.resizeDrawingSurfaceToCanvas();
+                }
+            });
+
+            var isGame = false;
+            function clickProject(){
+                isGame = !isGame;
+                if(isGame) i.play("GAME -> TRAILER");
+                else i.play("TRAILER -> GAME");
+            }
         </script>
 
     </body>
