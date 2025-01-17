@@ -11,22 +11,60 @@
 
     <body>
 
-        <div id="console-container" class="full-screen-rive">
-            <canvas id="console-rive" width="1024" height="1536"></canvas>
-            <div class="project-button" onclick="clickProject()"></div>
-            <div class="services-button" onclick="clickServices()"></div>
-        </div>
+        <div id="body-div">
 
-        <!--<div id="nav-bar">
-            <h1>Home</h1>
-            <h1>Services</h1>
-            <h1>Work</h1>
-        </div> -->
-
-        <div id="width-margin">
-            <div id="height-margin">
-                <canvas id="logo-rive" width="1024" height="1024"></canvas>
+            <div id="console-container" class="full-screen-rive">
+                <canvas id="console-rive" width="1024" height="1536"></canvas>
+                <div class="project-button" onclick="clickProject()"></div>
+                <div class="services-button" onclick="clickServices()"></div>
+                <div class="start-button" onclick="clickStart()"></div>
             </div>
+
+            <!--<div id="nav-bar">
+                <h1>Home</h1>
+                <h1>Services</h1>
+                <h1>Work</h1>
+            </div> -->
+
+            <div id="width-margin">
+                <div id="height-margin">
+                    <canvas id="logo-rive" width="1024" height="1024"></canvas>
+                </div>
+            </div>
+
+            <div id="page-container">
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>teest</h1>
+                <h1>test</h1>
+                <h1>teest</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>teest</h1>
+                <h1>test</h1>
+                <h1>teest</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>teeest</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>teest</h1>
+                <h1>teest</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>teeeest</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>teeest</h1>
+                <h1>test</h1>
+                <h1>teeeeeeest</h1>
+            </div>
+
         </div>
 
         <script>
@@ -69,6 +107,15 @@
                 else if(servicesIndex == 4) i.play("TECH-ART -> PROGRAMMING");
                 else if(servicesIndex == 5) i.play("PROGRAMMING -> AUDIO");
                 else if(servicesIndex == 6) i.play("AUDIO -> IN-ENGINE");
+            }
+
+            function clickStart(){
+                var pageContainer = document.getElementById("page-container");
+                pageContainer.style.display = "block";
+                document.getElementById("console-container").style.position = "relative";
+
+                pageContainer.scrollIntoView({behavior: "smooth"});
+                setTimeout(function(){document.rootElement.style.overflow = "visible";}, 1000);
             }
         </script>
 
