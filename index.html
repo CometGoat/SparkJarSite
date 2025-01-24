@@ -73,8 +73,8 @@
                 src: './public/jar_spark.riv',
                 canvas: document.getElementById("console-rive"),
                 autoplay: true,
-                //stateMachines: ["State Machine 1", ""],
-                animations: ["Logo V3"],
+                stateMachines: ["State Machine 1", ""],
+                //animations: ["Logo V3"],
                 onLoad: () => {
                     r.resizeDrawingSurfaceToCanvas();
                 }
@@ -119,6 +119,7 @@
                     {
                         fromLogo = false;
                         r.play("Logo -> Engine");
+                        r.play("Hand Fade Out");
                         return;
                     }
                     
