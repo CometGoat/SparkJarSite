@@ -116,6 +116,18 @@ body{
     /*background-color: blue;*/
 }
 
+.cycle-services-button{
+    position:absolute;
+    width: 50%;
+    height: 60%;
+    border-radius: 10%;
+    top: 31.7%;
+    left: 26%;
+    aspect-ratio: 1/1;
+    z-index: 2;
+    /*background-color: blue;*/
+}
+
 .start-button{
     position:absolute;
     width: 24%;

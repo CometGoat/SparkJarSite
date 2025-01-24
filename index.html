@@ -15,9 +15,10 @@
 
             <div id="console-container" class="full-screen-rive">
                 <canvas id="console-rive" width="1024" height="1536"></canvas>
-                <div class="project-button" onclick="clickProject()"></div>
+                <!--<div class="project-button" onclick="clickProject()"></div>
                 <div class="services-button" onclick="clickServices()"></div>
-                <div class="start-button" onclick="clickStart()"></div>
+                <div class="start-button" onclick="clickStart()"></div>-->
+                <div class="cycle-services-button" onclick="clickCycleServices()"></div>
             </div>
 
             <!--<div id="nav-bar">
@@ -26,11 +27,11 @@
                 <h1>Work</h1>
             </div> -->
 
-            <div id="width-margin">
+            <!--<div id="width-margin">
                 <div id="height-margin">
                     <canvas id="logo-rive" width="1024" height="1024"></canvas>
                 </div>
-            </div>
+            </div>-->
 
             <div id="page-container">
                 <h1>test</h1>
@@ -70,15 +71,16 @@
         <script>
             const r = new rive.Rive({
                 src: './public/jar_spark.riv',
-                canvas: document.getElementById("logo-rive"),
+                canvas: document.getElementById("console-rive"),
                 autoplay: true,
-                stateMachines: ["State Machine 1", ""],
+                //stateMachines: ["State Machine 1", ""],
+                animations: "Logo V3",
                 onLoad: () => {
                     r.resizeDrawingSurfaceToCanvas();
                 }
             });
 
-            const i = new rive.Rive({
+            /*const i = new rive.Rive({
                 src: './public/gameboy.riv',
                 canvas: document.getElementById("console-rive"),
                 autoplay: true,
@@ -86,7 +88,7 @@
                 onLoad: () => {
                     i.resizeDrawingSurfaceToCanvas();
                 }
-            });
+            });*/
 
             var isGame = true;
             function clickProject(){
@@ -96,6 +98,7 @@
             }
 
             var servicesIndex = 6;
+            var fromLogo = true;
             function clickServices(){
                 servicesIndex++;
                 if (servicesIndex > 6) servicesIndex = 0;
@@ -107,6 +110,28 @@
                 else if(servicesIndex == 4) i.play("TECH-ART -> PROGRAMMING");
                 else if(servicesIndex == 5) i.play("PROGRAMMING -> AUDIO");
                 else if(servicesIndex == 6) i.play("AUDIO -> IN-ENGINE");
+            }
+
+            function clickCycleServices(){
+                
+
+                if (fromLogo == true)
+                    {
+                        fromLogo = false;
+                        r.play("Logo -> Engine");
+                        return;
+                    }
+                    
+                    servicesIndex++;
+                    if (servicesIndex > 6) servicesIndex = 0;
+
+                    if(servicesIndex == 0) r.play("Engine -> Camera");
+                    else if(servicesIndex == 1) r.play("Camera -> Rendering");
+                    else if(servicesIndex == 2) r.play("Rendering -> Animation");
+                    else if(servicesIndex == 3) r.play("Animation -> Tech-Art");
+                    else if(servicesIndex == 4) r.play("Tech-Art -> Programming");
+                    else if(servicesIndex == 5) r.play("Programming -> Audio");
+                    else if(servicesIndex == 6) r.play("Audio -> Engine");
             }
 
             function clickStart(){
