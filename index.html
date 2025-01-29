@@ -19,6 +19,10 @@
                 <div class="services-button" onclick="clickServices()"></div>
                 <div class="start-button" onclick="clickStart()"></div>-->
                 <div class="cycle-services-button" onclick="clickCycleServices()"></div>
+
+                <div id="take-me-to-site">
+                    <p onclick="clickStart()">take me to the site</p>
+                </div>
             </div>
 
             <!--<div id="nav-bar">
@@ -33,37 +37,39 @@
                 </div>
             </div>-->
 
-            <div id="page-container">
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>teest</h1>
-                <h1>test</h1>
-                <h1>teest</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>teest</h1>
-                <h1>test</h1>
-                <h1>teest</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>teeest</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>teest</h1>
-                <h1>teest</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>teeeest</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>teeest</h1>
-                <h1>test</h1>
-                <h1>teeeeeeest</h1>
+            <div id="page-container" class="hidden-page-container">
+                <h1>Welcome to Spark Jar</h1>
+                <h3>Provider of in-engine and design services for video game trailers</h3>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>teest</h2>
+                <h2>test</h2>
+                <h2>teest</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>teest</h2>
+                <h2>test</h2>
+                <h2>teest</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>teeest</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>teest</h2>
+                <h2>teest</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>teeeest</h2>
+                <h2>test</h2>
+                <h2>test</h2>
+                <h2>teeest</h2>
+                <h2>test</h2>
+                <h2>teeeeeeest</h2>
             </div>
 
         </div>
@@ -73,7 +79,7 @@
                 src: './public/jar_spark.riv',
                 canvas: document.getElementById("console-rive"),
                 autoplay: true,
-                stateMachines: ["State Machine 1", ""],
+                stateMachines: ["State Machine 1", "State Machine 2"],
                 //animations: ["Logo V3"],
                 onLoad: () => {
                     r.resizeDrawingSurfaceToCanvas();
@@ -113,13 +119,11 @@
             }
 
             function clickCycleServices(){
-                
-
                 if (fromLogo == true)
                     {
                         fromLogo = false;
                         r.play("Logo -> Engine");
-                        r.play("Hand Fade Out");
+                        r.stateMachineInputs("State Machine 2").find(input => input.name === "Trigger 1").fire();
                         return;
                     }
                     
@@ -136,12 +140,48 @@
             }
 
             function clickStart(){
-                var pageContainer = document.getElementById("page-container");
-                pageContainer.style.display = "block";
-                document.getElementById("console-container").style.position = "relative";
+                if (fromLogo == true)
+                {
+                    r.play("To Site Uninteracted");
+                }
+                else
+                {
+                    r.play("To Site");
+                }
 
-                pageContainer.scrollIntoView({behavior: "smooth"});
-                setTimeout(function(){document.rootElement.style.overflow = "visible";}, 1000);
+                document.getElementById("take-me-to-site").style.display = "none";
+                r.stateMachineInputs("State Machine 2").find(input => input.name === "Trigger 1").fire();
+
+                setTimeout(toBolt, 250);
+                setTimeout(handleStart, 500);
+                setTimeout(fadeInSite, 1000);
+            }
+
+            function handleStart()
+            {
+                /*var pageContainer = document.getElementById("page-container");
+                pageContainer.style.display = "block";*/
+
+                var consoleContainer = document.getElementById("console-container");
+                consoleContainer.classList.add("animate-out-logo-container");
+
+                var riveCanvas = document.getElementById("console-rive");
+                riveCanvas.classList.add("animate-out-logo-rive");
+
+                /*pageContainer.scrollIntoView({behavior: "smooth"});
+                setTimeout(function(){document.rootElement.style.overflow = "visible";}, 1000);*/
+            }
+        
+            function toBolt()
+            {
+                r.play("To Bolt");
+            }
+        
+            function fadeInSite()
+            {
+                var pageContainer = document.getElementById("page-container");
+                pageContainer.classList.remove("hidden-page-container");
+                pageContainer.classList.add("animate-in-site");
             }
         </script>
 

@@ -12,6 +12,7 @@ body{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        overflow-x: hidden;
 }
 
 #body-div{
@@ -68,8 +69,8 @@ body{
     position: fixed;
     width: 100vw; 
     height: 100vw;
-    max-height: 100vh;
-    max-width: 100vh;
+    max-height: 50vh;
+    max-width: 50vh;
     aspect-ratio: 1/1;
     top:0%; bottom: 0%; left: 0%; right: 0%;
     margin: auto;
@@ -81,6 +82,7 @@ body{
     height: auto;
     aspect-ratio: 1/1;
     margin: auto;
+    text-align: center;
 }
 
 #console-rive
@@ -139,6 +141,11 @@ body{
     /*background-color: blue;*/
 }
 
+.take-me-to-the-site{
+    position:absolute;
+    top: 90%;
+}
+
 .centred-text{
     text-align: center;
 }
@@ -149,7 +156,7 @@ body{
     }
 }
 
-#page-container{
+.hidden-page-container{
     display: none;
 }
 
@@ -166,3 +173,56 @@ body{
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
   }
+
+  .animate-out-logo-container{
+    /*(interpolate-size: allow-keywords;
+    animation-name: animate-out-logo;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;*/
+  }
+
+  .animate-out-logo-rive{
+    /*animation-name: animate-out-logo-rive;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;*/
+  }
+
+@keyframes animate-out-logo {
+    0%{
+        transform:translateY(0vh);
+        aspect-ratio: 1/1;
+    }
+    100%{
+        transform:translateY(-0vh);
+        max-width: 100vw;
+        max-width: 100vh;
+        aspect-ratio: 1/1;
+    }
+}
+
+@keyframes animate-out-logo-rive {
+    0%{
+        opacity: 1;
+        width: 100%;
+    }
+    100%{
+        opacity: 0;
+        width: 1000%;
+    }
+}
+
+.animate-in-site{
+    display: block;
+    animation-name: animate-in-site;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate-in-site {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
