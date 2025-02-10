@@ -37,39 +37,69 @@
                 </div>
             </div>-->
 
-            <div id="page-container" class="hidden-page-container">
-                <h1>Welcome to Spark Jar</h1>
-                <h3>Provider of in-engine and design services for video game trailers</h3>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>teest</h2>
-                <h2>test</h2>
-                <h2>teest</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>teest</h2>
-                <h2>test</h2>
-                <h2>teest</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>teeest</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>teest</h2>
-                <h2>teest</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>teeeest</h2>
-                <h2>test</h2>
-                <h2>test</h2>
-                <h2>teeest</h2>
-                <h2>test</h2>
-                <h2>teeeeeeest</h2>
+            <div id="root-flexbox" class = "hidden-page-container">
+
+                <div id="side-nav">
+                    <div id="nav-foreground">
+                        <canvas id="nav-logo" width="150" height="150"></canvas>
+                        <div class="nav-text">
+                            <h1><a href="#home">home</a></h1>
+                            <h1><a href="#services">services</a></h1>
+                            <h1><a href="#work">work</a></h1>
+                            <h1><a href="#contact">contact</a></h1>
+                        </div>
+                        <div id="nav-bottom-spacer"></div>
+                    </div>
+                </div>
+
+                <div id="page-container">
+                    <div id="home"></div>
+                    <h1>Welcome to Spark Jar</h1>
+                    <h3>Provider of in-engine and design services for video game trailers</h3>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>teest</h2>
+                    <h2>test</h2>
+                    <h2>teest</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>teest</h2>
+                    <h2>test</h2>
+                    <h2>teest</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>teeest</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>teest</h2>
+                    <h2>teest</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>teeeest</h2>
+                    <h2>test</h2>
+                    <h2>test</h2>
+                    <h2>teeest</h2>
+                    <h2>test</h2>
+                    <h2>teeeeeeest</h2>
+
+                    <div id="services">
+                        <h1>services</h1>
+                    </div>
+
+                    <div id="work">
+                        <h1>work</h1>
+                    </div>
+
+                    <div id="contact">
+                        <h1>contact</h1>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -85,6 +115,8 @@
                     r.resizeDrawingSurfaceToCanvas();
                 }
             });
+
+            
 
             /*const i = new rive.Rive({
                 src: './public/gameboy.riv',
@@ -154,7 +186,7 @@
 
                 setTimeout(toBolt, 250);
                 setTimeout(handleStart, 500);
-                setTimeout(fadeInSite, 1000);
+                setTimeout(fadeInSite, 1250);
             }
 
             function handleStart()
@@ -179,9 +211,19 @@
         
             function fadeInSite()
             {
-                var pageContainer = document.getElementById("page-container");
+                var pageContainer = document.getElementById("root-flexbox");
                 pageContainer.classList.remove("hidden-page-container");
                 pageContainer.classList.add("animate-in-site");
+
+                const l = new rive.Rive({
+                src: './public/jar_spark.riv',
+                canvas: document.getElementById("nav-logo"),
+                autoplay: true,
+                animations: ["Nav Logo"],
+                onLoad: () => {
+                    l.resizeDrawingSurfaceToCanvas();
+                }
+            });
             }
         </script>
 
