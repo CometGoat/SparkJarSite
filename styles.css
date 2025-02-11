@@ -236,6 +236,56 @@ svg path{
     margin-left: 2.5%;
 }
 
+#page-title{
+    font-size: 60px;
+}
+
+#tagline{
+    margin-top: 0;
+    font-size: 40px;
+}
+
+.page-text{
+    margin-top: 0;
+    font-size: 30px;
+    width: 90%;
+}
+
+.section-title{
+    font-size: 30px;
+}
+
+.trailer-service-title{
+    padding-left: 2.5%;
+    font-size: 40px;
+}
+
+.service-container{
+    display: flex;
+    flex-direction: row;
+    flex-basis: content;
+    width: 80%;
+    padding-left: 5%;
+}
+
+.service-title{
+    padding-right: 5%;
+    min-width: 30%;
+    font-size: 40px;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.service-descriptor{
+    margin-top: 0;
+    font-size: 30px;
+}
+
+#partner-text{
+    padding-left: 2.5%;
+    width: 80%;
+}
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
