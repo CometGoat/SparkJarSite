@@ -193,6 +193,8 @@ a {
     align-self:flex-start;
 
     height: 100vh;
+
+    transform: translateZ(0);
 }
 
 .side-nav-open{
