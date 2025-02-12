@@ -237,6 +237,7 @@ a {
 }
 
 #nav-foreground{
+    position: sticky;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -246,8 +247,12 @@ a {
                         100% 75%, 0% 100%);
 }
 
+#nav-background{
+    position: sticky;
+}
+
 #nav-background-texture{
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
 
