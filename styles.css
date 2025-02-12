@@ -234,15 +234,6 @@ a {
     }
 }
 
-@keyframes nav-background-scroll{
-    0%{
-        background-position: 0% 100%;
-    }
-    100%{
-        background-position: 0% 0%;
-    }
-}
-
 #nav-foreground{
     display: flex;
     flex-direction: column;
@@ -263,7 +254,30 @@ a {
     background-repeat: repeat;
     background-size: 25%;
 
-    animation: nav-background-scroll 30s infinite linear;
+    /*animation: nav-background-scroll 30s infinite linear;*/
+
+    -webkit-animation-name: nav-background-scroll;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes nav-background-scroll{
+    0%{
+        background-position: 0% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+@-webkit-keyframes nav-background-scroll{
+    0%{
+        background-position: 0% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
 }
 
 svg path{
