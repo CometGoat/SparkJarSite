@@ -176,6 +176,16 @@ a {
     
 }
 
+#side-nav-button{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 10px;
+    margin-left: calc(100% + 10px);
+    background-color: turquoise;
+}
+
 #side-nav{
     position: sticky;
     top: 0;
@@ -183,14 +193,45 @@ a {
     align-self:flex-start;
 
     height: 100vh;
+}
 
-    width: auto;
+.side-nav-open{
+    width: 200px;
+    transition: width 0.35s;
+}
 
-    background-image: url('public/BoltSmall.svg');
-    background-repeat: repeat;
-    background-size: 25%;
+.side-nav-closed{
+    width: 0%;
+    transition: width 0.35s;
+}
 
-    animation: nav-background-scroll 30s infinite linear;
+.nav-background-fade-in{
+    animation: nav-background-fade-in 0.7s;
+}
+
+.nav-background-fade-out{
+    animation: nav-background-fade-out 0.7s;
+}
+
+@keyframes nav-background-fade-in{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes nav-background-fade-out{
+    0%{
+        opacity: 100%;
+    }
+    25%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 0%;
+    }
 }
 
 @keyframes nav-background-scroll{
@@ -212,19 +253,34 @@ a {
                         100% 75%, 0% 100%);
 }
 
+#nav-background-texture{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    background-image: url('public/BoltSmall.svg');
+    background-repeat: repeat;
+    background-size: 25%;
+
+    animation: nav-background-scroll 30s infinite linear;
+}
+
 svg path{
     fill: white;
 }
 
 #nav-logo{
-    margin-top: 5%;
-    height: auto;
-    width: auto;
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: 10px;
+    height: 150px;
+    width: 150px;
 }
 
 .nav-text{
-    padding-left: 5%;
-    padding-right: 10%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #nav-bottom-spacer{

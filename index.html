@@ -40,6 +40,14 @@
             <div id="root-flexbox" class = "hidden-page-container">
 
                 <div id="side-nav">
+
+                    <div id="nav-background">
+                        <div id="nav-background-texture"></div>
+                    </div>
+                    
+                    <div id="side-nav-button" onclick="toggleNav()">
+                    </div>
+
                     <div id="nav-foreground">
                         <canvas id="nav-logo" width="150" height="150"></canvas>
                         <div class="nav-text">
@@ -108,6 +116,7 @@
         </div>
 
         <script>
+
             const r = new rive.Rive({
                 src: './public/jar_spark.riv',
                 canvas: document.getElementById("console-rive"),
@@ -212,6 +221,7 @@
                 r.play("To Bolt");
             }
         
+            var navIsOpen = true;
             function fadeInSite()
             {
                 var pageContainer = document.getElementById("root-flexbox");
@@ -227,6 +237,31 @@
                     l.resizeDrawingSurfaceToCanvas();
                 }
             });
+
+                if(window.innerHeight > window.innerWidth){
+                    navIsOpen = false;
+                }
+                // Looks silly but this is so the toggle initialises with the correct value
+                navIsOpen = !navIsOpen;
+                toggleNav();
+            }
+        
+            function toggleNav(){
+                navIsOpen = !navIsOpen;
+                if (navIsOpen){
+                    document.getElementById("side-nav").classList.remove("side-nav-closed");
+                    document.getElementById("nav-background").classList.remove("nav-background-fade-out");
+
+                    document.getElementById("side-nav").classList.add("side-nav-open");
+                    document.getElementById("nav-background").classList.add("nav-background-fade-in");
+                }
+                else{
+                    document.getElementById("side-nav").classList.remove("side-nav-open");
+                    document.getElementById("nav-background").classList.remove("nav-background-fade-in");
+
+                    document.getElementById("side-nav").classList.add("side-nav-closed");
+                    document.getElementById("nav-background").classList.add("nav-background-fade-out");
+                }
             }
         </script>
 
